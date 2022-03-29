@@ -1,9 +1,50 @@
 
 
+// Flexbox section starts here
+
+.flex{
+    display:flex;
+}
+
+.flex_center{
+    align-items: center;
+    justify-content: center;
+}
+
+.flex_column{
+    flex-direction: column;
+}
+
+.flex_column_center{
+    flex-direction: column;
+    align-items: center;
+}
+
+//Flexbox section ends here
+
 .border_radius{
     border-radius: 8px;
 }
 .capitalize
 {
     text-transform: capitalize;
+}
+.white_text{
+    color:$pure_white;
+}
+.text_center{
+    text-align: center;
+}
+
+
+.fw_300{
+    font-weight: 300;
+}
+
+
+.fs_300{
+    font-size: $fs-300;
+}
+.fs_800{
+    font-size: $fs-800;
 }

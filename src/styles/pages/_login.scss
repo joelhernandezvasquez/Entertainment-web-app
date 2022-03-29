@@ -1,0 +1,48 @@
+@import '../utils/variables.scss';
+
+
+.login_wrapper{
+    height:100vh;
+    padding-top:48px;
+    
+    main{
+       margin-top: 50px;
+    }
+}
+
+.login_container{
+    width: clamp(327px, 55vw, 400px);
+    background-color:$semi_dark_blue ;
+    border-radius: 10px;
+    height:250px;
+    padding: clamp(24px, 4.2vw, 32px);
+
+  
+}
+.signInBtn{
+    border:none;
+    background:$primary_red;
+    color:$pure_white;
+    border-radius: 6px;
+    font-size: $fs-300;
+    font-weight: 300;
+    padding:14px 48px;
+    width:100%;
+    margin:40px 0 24px 0;
+    cursor: pointer;
+    transition:all 400ms ease-in-out;
+
+    &:hover{
+        background-color: $pure_white;
+        color:$semi_dark_blue;
+    }
+}
+
+.google_icon{
+    margin-right: 5px;
+    font-size: $fs-500;
+}
+.google_link{
+    color:$primary_red;
+    margin-left:9px;
+}
