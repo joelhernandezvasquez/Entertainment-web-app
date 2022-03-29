@@ -1,3 +1,6 @@
+
+@import './utils/variables.scss';
+
 /* ---------------*
 /*  Reset */
 /* ---------------*/
@@ -30,6 +33,7 @@ body {
     line-height:1.5;
     min-height: 100vh;
     font-family: 'Outfit', sans-serif;
+    background-color:$dark_black;
   }
 
   /* make images easier to work with*/
