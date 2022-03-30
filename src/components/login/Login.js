@@ -1,9 +1,8 @@
-import React from 'react'
+
 import '../../styles/main.scss';
 import Logo from '../../assets/logo.svg';
 
 const Login = () => {
-
 
 
   return (

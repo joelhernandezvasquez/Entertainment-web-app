@@ -1,8 +1,12 @@
 import AppRouter from "./routers/AppRouter"
 
+import AuthState from './auth/AuthState';
+
 const EntertainmentApp = () => {
   return (
-  <AppRouter/>
+ <AuthState>
+     <AppRouter/>
+ </AuthState>
   )
 }
 
