@@ -1,12 +1,20 @@
 
 import { useContext } from 'react';
 import AuthContext from '../../auth/authContext';
-import '../../styles/main.scss';
 import Logo from '../../assets/logo.svg';
+import '../../styles/main.scss';
+
 
 const Login = () => {
-   const userContext = useContext(AuthContext);
-  
+   const {loginIn} = useContext(AuthContext);
+ 
+
+   const handlerLogin = () =>{
+    window.gapi.auth2.getAuthInstance().signIn().then(()=>{
+       loginIn();
+     }) 
+   }
+
   return (
     <section className='login_wrapper flex flex_column_center animate__animated animate__fadeIn' role="region">
        <header>
@@ -17,7 +25,7 @@ const Login = () => {
          <div className='login_container' role="form" aria-labelledby='sign-in-form'>
            <h1 className='white_text fw_300 fs_800'>Login</h1>
            <button 
-           onClick={()=> userContext.signIn()}
+              onClick={()=> handlerLogin()}
              className='signInBtn flex flex_center'
               aria-describedby='sign in google'> 
               <i className="fa fa-google google_icon" aria-hidden="true"></i> Sign In with Google

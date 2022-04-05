@@ -5,10 +5,17 @@ export default (state,action) =>{
 
     switch(action.type){
 
+        case types.isSignIn:
+            return{
+                ...state,
+                logged:action.payload
+            }
+        
+        
         case types.login :
         return{
             ...state,
-            logged:action.payload
+            logged:true
         }  
 
         case types.logout :

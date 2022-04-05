@@ -5,8 +5,10 @@ import { Navigate} from 'react-router-dom';
 const PublicRoutes = ({children}) => {
 
     const {logged} = useContext(AuthContext);
- 
-    return logged ? <Navigate to={"/home"}/>:children 
+
+     const lastPath = window.localStorage.getItem('lastPath') || '/home'; 
+    
+    return logged ? <Navigate to={lastPath}/>:children 
 }
 
 export default PublicRoutes

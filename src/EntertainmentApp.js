@@ -9,6 +9,7 @@ const EntertainmentApp = () => {
   
   useEffect(()=>{
     window.gapi.load('client:auth2', ()=>{
+
       window.gapi.client.init({
         clientId: googleAuthKey,
          scope:'email'

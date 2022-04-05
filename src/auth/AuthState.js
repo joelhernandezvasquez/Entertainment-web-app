@@ -19,14 +19,23 @@ const AuthState =  (props) =>{
     // Actions goes here
 
     const IsUserSignIn = (userStatus) =>{
-       dispatch({type:types.login,payload:userStatus})
+       dispatch({type:types.isSignIn,payload:userStatus})
+    }
+
+    const loginIn = () =>{
+        dispatch({type:types.login})
+    }
+    const logOut = () =>{
+        dispatch({type:types.logout})
     }
 
     return <AuthContext.Provider 
            value = {{
               
                 logged:state.logged,
-                IsUserSignIn
+                IsUserSignIn,
+                loginIn,
+                logOut
             }}
             >
           {props.children}
