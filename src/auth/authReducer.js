@@ -8,7 +8,7 @@ export default (state,action) =>{
         case types.login :
         return{
             ...state,
-            logged:true
+            logged:action.payload
         }  
 
         case types.logout :

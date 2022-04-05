@@ -14,6 +14,7 @@ const DashboardRoutes = () => {
       <Route path="tvSeries" element={<TvSeries/>}/>
       <Route path="show" element={<Show/>}/>
       <Route path="bookmark" element={<Bookmark/>}/>
+      <Route path="/" element={<Home />} />
     </Routes>
   )
 }

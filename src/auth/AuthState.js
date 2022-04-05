@@ -3,28 +3,30 @@
 import {useReducer} from 'react';
 import authReducer  from './authReducer';
 import  AuthContext  from './authContext';
+import  {googleAuthKey} from '../API/index';
+import {types} from '../types/types';
 
 const AuthState =  (props) =>{
  
     const initialState = {
-        userName:'Joel Hernandez',
-        userEmail:'jhernandez98@outlook.es',
-        logged:false
+        logged:null
     }
 
-    // const init = () =>{
-
-    // }
+    
 
     const [state,dispatch] = useReducer(authReducer,initialState);
 
     // Actions goes here
 
+    const IsUserSignIn = (userStatus) =>{
+       dispatch({type:types.login,payload:userStatus})
+    }
+
     return <AuthContext.Provider 
            value = {{
-                userName: state.userName,
-                userEmail: state.userEmail,
-                logged:state.logged
+              
+                logged:state.logged,
+                IsUserSignIn
             }}
             >
           {props.children}

@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import EntertainmentApp from './EntertainmentApp';
+import AuthState from './auth/AuthState';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <EntertainmentApp/>
-  </React.StrictMode>,
+ 
+<AuthState>
+
+  <EntertainmentApp/>
+</AuthState>
+ 
+  ,
   document.getElementById('root')
 );
 
