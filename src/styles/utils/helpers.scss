@@ -6,6 +6,9 @@
     display:flex;
 }
 
+.flex_center_align{
+    align-items:center;
+}
 .flex_center{
     align-items: center;
     justify-content: center;
@@ -20,7 +23,23 @@
     align-items: center;
 }
 
+.flex_row_center_space_between{
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
 //Flexbox section ends here
+
+.gap_5{
+  gap:5px;
+}
+
+.gap_10{
+    gap:10px;
+  }
+  
 
 .border_radius{
     border-radius: 8px;
@@ -42,6 +61,9 @@
 }
 
 
+.fs_200{
+    font-size: $fs-200;
+}
 .fs_300{
     font-size: $fs-300;
 }

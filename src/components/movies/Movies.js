@@ -1,8 +1,11 @@
 import React from 'react'
+import Nav from '../MenuNav/Nav'
 
 const Movies = () => {
   return (
-    <div>Movies</div>
+    <div>
+      <Nav/>
+    </div>
   )
 }
 

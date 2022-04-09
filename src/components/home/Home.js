@@ -1,9 +1,11 @@
 import {useContext} from 'react'
 import AuthContext from '../../auth/authContext'
+import Nav from '../MenuNav/Nav';
+import '../../styles/main.scss';
 
 const Home = () => {
-const {logOut} = useContext(AuthContext);
 
+  const {logOut} = useContext(AuthContext);
 
 const handleLogout = () =>{
  window.gapi.auth2.getAuthInstance().signOut().then(()=>{
@@ -11,13 +13,13 @@ const handleLogout = () =>{
  })
 }
   return (
-    <div>
-      Home
+    <section className='home_wrapper grid'>
       
-      <button onClick={()=> handleLogout()}>
-        Logout
-      </button>
-      </div>
+      <header>
+         <Nav/>
+      </header>
+    
+    </section>
   )
 }
 

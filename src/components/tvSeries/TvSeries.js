@@ -1,8 +1,12 @@
 import React from 'react'
+import Nav from '../MenuNav/Nav'
 
 const TvSeries = () => {
   return (
-    <div>TvSeries</div>
+    <div>
+     <Nav/>
+      
+      </div>
   )
 }
 

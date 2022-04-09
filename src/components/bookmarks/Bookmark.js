@@ -1,8 +1,11 @@
 import React from 'react'
+import Nav from '../MenuNav/Nav'
 
 const Bookmark = () => {
   return (
-    <div>Bookmark</div>
+    <div>
+      <Nav/>
+    </div>
   )
 }
 
