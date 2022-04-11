@@ -9,8 +9,8 @@ const Avatar = () => {
 
   return (
     
-    <div className='avatar' aria-label='avatar' onClick={handleToogle}>
-    <img src={AvatarImg} alt="profile picture"/>
+    <div className='avatar' aria-label='avatar'>
+    <img src={AvatarImg} alt="profile picture" onClick={handleToogle}/>
    
      { toogle &&  <ProfilePanel/>}
 

@@ -4,6 +4,7 @@
     border-radius:50%;
     border:1px solid $pure_white;
     position: relative;
+    cursor:pointer;
   
     img{
         width:100%;
@@ -21,7 +22,7 @@
       right:0;
       top:40px;
       padding:0 15px;
-     
+     //cursor: ;
 
       &::before{
           content:'';
@@ -60,5 +61,12 @@
       color:$pure_white;
       font-size: $fs-300;
       margin-top:5px;
+      cursor: pointer;
+      transition:all 400ms ease-in-out;
+
+      &:hover{
+        background-color: $pure_white;
+        color:$semi_dark_blue;
+    }
 
   }

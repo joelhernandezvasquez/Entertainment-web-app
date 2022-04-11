@@ -14,9 +14,19 @@
 
 }
 
+
+
 .items{
     margin-right:24px;
+  
+    &:hover{
+       path{
+           fill:$primary_red;
+       }
+    }
 }
+
+
 
 
 
