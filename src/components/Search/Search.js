@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { getPlaceholder } from '../helpers';
 import IconSearch from '../../assets/icon-search.svg';
 
-const Search = () => {
+const Search = ({handleSearchTerm}) => {
 
     const[searchInput,setSearchInput] = useState('');
     const inputRef = useRef(null);
@@ -26,14 +26,18 @@ const Search = () => {
       
     }
 
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+      handleSearchTerm(searchInput);
+      setSearchInput('');
+    }
+
   return (
     <div className='search flex' aria-label='Search'>
         
        <img src={IconSearch} alt="Search Icon" role="img"/>
-     
     
-
-       <form className='search_form'>
+       <form className='search_form' onSubmit={(e)=> handleSubmit(e)}>
         <input type="text"
             name="search"
             className='input_search fs_400 fw_300'
