@@ -1,0 +1,30 @@
+
+.search{
+    margin:24px 0;
+}
+.search_form{
+    margin-left:16px;
+    height:34px;
+
+    .input_search{
+        border:none;
+        height:100%;
+        outline: 1px solid transparent;
+        background-color:transparent;
+        width:240px;
+        color:$pure_white;
+       
+
+        &::placeholder{
+            color:rgba($pure_white,0.5);
+            font-size: $fs-400;
+            font-weight: 300;
+        }
+
+    }
+    .active_input_search.input_search{
+        border-bottom: 1px solid $greyish_blue;
+    }
+}
+
+

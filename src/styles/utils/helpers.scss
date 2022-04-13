@@ -67,6 +67,14 @@
 .fs_300{
     font-size: $fs-300;
 }
+.fs_400{
+    font-size: $fs-400;
+}
 .fs_800{
     font-size: $fs-800;
+}
+
+.container{
+    max-width: 1100px;
+    padding:0 16px;
 }
