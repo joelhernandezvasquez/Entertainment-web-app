@@ -34,3 +34,11 @@ export const getPlaceholder = (route) =>{
      const result = placeholders.find(placeholder => placeholder.id === route)
      return result.value; 
 }
+
+export const getYear = (date) =>{
+  return new Date(date).getFullYear().toString();
+}
+
+export const getClassifiedShow = (media_type,type_of_show) =>{
+  return media_type === 'movie' && !type_of_show ? 'PG' : 'E';
+}
