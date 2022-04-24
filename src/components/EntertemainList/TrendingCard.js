@@ -1,6 +1,13 @@
 
+
+import{motion} from 'framer-motion';
+import BookmarkIcon from '../bookmarks/BookmarkIcon';
+import CardInformation from './CardInformation';
+import useToogle from '../../hooks/useToogle';
+import HoverCard from './HoverCard';
 import useFetchImage from '../../hooks/useFetchImage';
 import {getYear,getClassifiedShow} from '../helpers/index';
+
 
 const TrendingCard = ({show}) => {
  
@@ -9,16 +16,33 @@ const TrendingCard = ({show}) => {
  const classifiedShow = getClassifiedShow(media_type,show.adult);
  const title = media_type === 'movie'? show.title : show.name
  const {data,isLoading} = useFetchImage(show.poster_path);
-
+ const [isShown,handleToogle] = useToogle(false);
 
   return (
-    <div className='trending_card'>
-     
+    <motion.div className='trending_card' onMouseEnter={()=>handleToogle()} onMouseLeave = {()=> handleToogle()}>
+    
       {!isLoading && ( 
-        <img src={data} className="border_radius"/>
+        <>
+       
+          <img className="trending_card_img border_radius" src={data} />
+          
+          <div className='inner_trending_information flex flex_column'>
+             <BookmarkIcon/>
+             <CardInformation 
+              year={year}
+              media_type = {media_type}
+              classifiedShow = {classifiedShow}
+              title= {title}
+             />
+            
+          </div>
+        
+        </>
+        
       )
       }
-    </div>
+        {isShown && <HoverCard/>}
+    </motion.div>
   )
 }
 

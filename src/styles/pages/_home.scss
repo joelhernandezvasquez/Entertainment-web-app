@@ -3,7 +3,24 @@
 @import '../components/avatar';
 @import '../components/search';
 @import '../components/trending_card';
+@import '../components/bookmark_icon';
+@import '../components/card_information';
+@import '../components/hover_card';
+@import '../components/card_entertaiment';
+
 
 .home_wrapper{
     
+}
+
+.trending_show_container{
+   cursor:grab;
+   overflow:hidden;
+  
+}
+
+.inner_show_container{
+  
+    display:flex;
+    align-items: flex-start;
 }

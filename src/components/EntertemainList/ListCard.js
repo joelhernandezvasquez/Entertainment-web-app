@@ -1,16 +1,19 @@
 
 import TrendingCard from "./TrendingCard"
+import EntertaimentCard from "./EntertaimentCard"
 
 
-const ListCard = ({shows}) => {
+const ListCard = ({data,type}) => {
+
 
   return (
     <>
    
-     {shows.map((show)=>{
-         return <TrendingCard key= {show.id} show = {show}/>
-     }
-     )}
+     {type ==='shows'?(data.map((item)=>{
+       return <TrendingCard key ={item.id} show ={item}/>
+     })):(data.map((item)=>{
+       return <EntertaimentCard key = {item.id} info = {item}/>
+     }))}
     </>
   )
 }

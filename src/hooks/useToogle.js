@@ -10,7 +10,11 @@ const useToogle = (initialValue = false) => {
         setToogle(!toogle);
     }
 
-    return [toogle,handleToogle];
+    const toggling = (value) =>{
+     setToogle(value);
+    }
+
+    return [toogle,handleToogle,toggling];
 
 
 }

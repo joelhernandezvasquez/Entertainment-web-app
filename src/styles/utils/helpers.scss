@@ -30,6 +30,7 @@
 }
 
 
+
 //Flexbox section ends here
 
 .gap_5{
@@ -59,8 +60,12 @@
 .fw_300{
     font-weight: 300;
 }
-
-
+.fw_500{
+    font-weight: 500;
+}
+.fs_100{
+    font-size:$fs-100;
+}
 .fs_200{
     font-size: $fs-200;
 }
@@ -70,11 +75,22 @@
 .fs_400{
     font-size: $fs-400;
 }
+.fs_600{
+    font-size: $fs-600;
+}
 .fs_800{
     font-size: $fs-800;
 }
 
+.card_dot{
+    width:3px;
+    height:3px;
+    border-radius: 50%; 
+    background:$pure_white;
+}
+
 .container{
-    max-width: 1100px;
+    //max-width: 1100px;
     padding:0 16px;
 }
+
