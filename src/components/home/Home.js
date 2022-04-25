@@ -71,7 +71,10 @@ const Home = () => {
 
        <section aria-label="Recommended for you">
           <h2 className=" heading_section white_text fw_300 fs_600">Recommended for you</h2>
-          <ListCard data = {recommended} type="recommended"/> 
+           <div className='recommendedForYou_container'>
+             <ListCard data = {recommended} type="recommended"/> 
+           </div>
+        
        </section>
     
 

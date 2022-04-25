@@ -24,3 +24,13 @@
     display:flex;
     align-items: flex-start;
 }
+
+.recommendedForYou_container{
+    //border:1px solid blue;
+  
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(164px,max-content));
+  
+    gap:15px;
+    margin-bottom:60px;
+}
