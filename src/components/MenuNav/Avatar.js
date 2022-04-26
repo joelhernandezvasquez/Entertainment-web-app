@@ -1,16 +1,18 @@
 
 import ProfilePanel from './ProfilePanel';
 import useToogle from '../../hooks/useToogle';
-import AvatarImg from '../../assets/image-avatar.png';
-
+import {getImageUrl} from '../helpers/index';   
 const Avatar = () => {
+
   
   const [toogle,handleToogle] = useToogle();
 
   return (
     
     <div className='avatar' aria-label='avatar'>
-    <img src={AvatarImg} alt="profile picture" onClick={handleToogle}/>
+        
+    <img src={getImageUrl()} alt="profile picture" onClick={handleToogle}/>
+    
    
      { toogle &&  <ProfilePanel/>}
 

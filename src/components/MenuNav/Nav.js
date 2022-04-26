@@ -18,7 +18,7 @@ const [activeLink,setActiveLink] = useState(pathname);
   return (
    
    <nav className='main_navigation flex flex_row_center_space_between' aria-label='Main Navigation'>
-    {console.log("rendered again..")}
+ 
     <img src={Logo} alt="Movie Logo" role ="img"/>
 
      <ul className='menu_items flex'>

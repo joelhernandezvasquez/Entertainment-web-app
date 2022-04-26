@@ -18,12 +18,24 @@ export const getProfileName = () =>{
 export const getProfileEmail = () =>{
     try{
 
+        console.log(window.gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getEmail())
        return window.gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getEmail();
     
     }
     catch(err) {
         console.log(err);
     }
+}
+
+export const getImageUrl = () =>{
+    try{
+
+        return window.gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getImageUrl();
+     
+     }
+     catch(err) {
+         console.log(err);
+     }
 }
 
 export const getPlaceholder = (route) =>{
