@@ -2,6 +2,7 @@
 import BookmarkIcon from '../bookmarks/BookmarkIcon';
 import CardInformation from './CardInformation';
 import useToogle from '../../hooks/useToogle';
+import HoverCard from './HoverCard';
 import useFetchImage from '../../hooks/useFetchImage';
 import {getYear,getClassifiedShow} from '../helpers/index';
 
@@ -12,10 +13,11 @@ const EntertaimentCard = ({info}) => {
  const classifiedShow = getClassifiedShow(media_type,info.adult);
  const title = media_type === 'movie'? info.title : info.name
  const {data,isLoading} = useFetchImage(info.poster_path);
+ const [isShown,handleToogle] = useToogle(false);
 
  
   return (
-   <div className='card_entertaiment'>
+   <div className='card_entertaiment' onMouseEnter={()=>handleToogle()} onMouseLeave = {()=> handleToogle()}>
       {!isLoading && ( 
         <>
          <div className="card_entertaiment_img_container">
@@ -38,7 +40,7 @@ const EntertaimentCard = ({info}) => {
         
       )
       }
-     
+     {isShown && <HoverCard/>}
      
    </div>
   )
