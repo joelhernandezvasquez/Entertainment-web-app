@@ -1,5 +1,6 @@
 
 
+
 $primary_red:hsl(0,97%,63%);
 $dark_black: hsl(223, 30%, 9%);
 $semi_dark_blue:hsl(223,36,14);
@@ -10,21 +11,27 @@ $pure_white:hsl(0,0%,100%);
 // screen sizes
 
 $table_screen:767px;
-$desktop_screen:1439px;
+$desktop_screen:1200px;
 
 
 
 /* font-sizes */
 
 
+
 $fs-800: 2rem;//32px
 $fs-700: 1.5rem;  //24px
-$fs-600:1.25rem;   //20px
+$fs-600: clamp(1.25rem, 4.2vw, 2rem);   //20px
 $fs-500: 1.125rem; // 18px
-$fs-400: 1rem;  // 16px
+$fs-400: clamp(1rem, 3.1vw, 1.5rem);  // 16px
 $fs-300: 0.9375rem;  //15px
 $fs-200: 0.8125rem;  // 13px
-$fs-100:0.75rem;    // 12px
+$fs-100: clamp(0.75rem, 2vw, .9375rem);    // 12px
+
+
+
+
+
 
 
 

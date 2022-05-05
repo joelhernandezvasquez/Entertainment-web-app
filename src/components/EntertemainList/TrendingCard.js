@@ -1,5 +1,5 @@
 
-
+import { useRef } from 'react';
 import{motion} from 'framer-motion';
 import BookmarkIcon from '../bookmarks/BookmarkIcon';
 import CardInformation from './CardInformation';
@@ -17,9 +17,10 @@ const TrendingCard = ({show}) => {
  const title = media_type === 'movie'? show.title : show.name
  const {data,isLoading} = useFetchImage(show.poster_path);
  const [isShown,handleToogle] = useToogle(false);
+ const trending_card_ref = useRef();
 
   return (
-    <motion.div className='trending_card' onMouseEnter={()=>handleToogle()} onMouseLeave = {()=> handleToogle()}>
+    <motion.div className='trending_card' ref = {trending_card_ref} onMouseEnter={()=>handleToogle()} onMouseLeave = {()=> handleToogle()}>
     
       {!isLoading && ( 
         <>
@@ -41,7 +42,7 @@ const TrendingCard = ({show}) => {
         
       )
       }
-        {isShown && <HoverCard/>}
+        {isShown && <HoverCard height = {trending_card_ref.current.getBoundingClientRect().height}/>}
     </motion.div>
   )
 }

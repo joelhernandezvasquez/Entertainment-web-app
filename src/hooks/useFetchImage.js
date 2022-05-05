@@ -28,7 +28,7 @@ const useFetchImage = (poster_path) => {
     
               if(isMounted){
                 const img = result.images.base_url
-                const posterSize = result.images.poster_sizes[3];     
+                const posterSize = result.images.poster_sizes[4];     
                 setData({data:`${img}${posterSize}${poster_path}`, isLoading:false,error:null})
               }
            }

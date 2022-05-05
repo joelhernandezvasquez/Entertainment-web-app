@@ -1,5 +1,6 @@
 
-import { useState, useEffect,useRef,useLayoutEffect } from 'react';
+import { useState, useEffect,useRef} from 'react';
+import useFetch from '../../hooks/useFetch';
 import {motion} from 'framer-motion';
 import Search from '../Search/Search';
 import Nav from '../MenuNav/Nav';
@@ -10,19 +11,25 @@ import '../../styles/main.scss';
 
 const Home = () => {
 
-  const [searchTerm,setSearchTerm] = useState();
+  const [searchTerm,setSearchTerm] = useState('');
   const [trending,setTrending] = useState([]);
   const [recommended,setRecommended] = useState([]);
   const [trendingShowWidth,setTrendingShowWidth] = useState(0);
   const trendingShowContainerRef = useRef();
-  //const endpoint = `https:api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${searchTerm}`;
- // const request = useFetch(searchTerm,endpoint);
+  const {data,isLoading} = useFetch(searchTerm,`https:api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${searchTerm}`);
+  
+
+  useEffect(()=>{
+   setTrendingShowWidth(trendingShowContainerRef.current.scrollWidth - trendingShowContainerRef.current.offsetWidth);
+  },[trending])
 
 
   useEffect(()=>{
+
+  
      
     const getTrendingData = async () =>{
-     
+    
       Promise.allSettled([
         fetchTrending(),
         fetchRecommended()
@@ -30,7 +37,7 @@ const Home = () => {
         
         setTrending(response[0].value.data);
         setRecommended(response[1].value.data);
-        setTrendingShowWidth(trendingShowContainerRef.current.scrollWidth - trendingShowContainerRef.current.offsetWidth)
+      
       })
       .catch(err=>{
        setTrending(null)
@@ -40,28 +47,34 @@ const Home = () => {
 
     }
     getTrendingData();
-  
+   
+    
   },[])
 
-
+  
   return (
     <section className='home_wrapper grid'>
-   
-      <header>
+  
+     
+      <header className="main_header">
          <Nav/>
       </header>
 
-      <main className='container'>
+      <main className='container main_area'>
        
-     
-      {/* check it for extra re-render */}
-        <Search handleSearchTerm = {setSearchTerm}/> 
+        <Search searchTerm = {searchTerm} handleSearchTerm = {setSearchTerm}/> 
 
-        <section className="trending_show_section"  aria-label="Trending Shows">
-            <h2 className=" heading_section white_text fw_300 fs_600">Trending</h2>
-            
+      {!searchTerm
+      
+      ? 
+      <>
+      {}
+      <section className="trending_show_section"  aria-label="Trending Shows">
+            <h2 className="heading_section white_text fw_300 fs_600">Trending</h2>
+        
            <motion.div ref={trendingShowContainerRef} className='trending_show_container' whileTap={{cursor:'grabbing'}}>
                 <motion.div drag="x" dragConstraints={{right:0,left:-trendingShowWidth}} className='inner_show_container'>
+               
                     <ListCard data = {trending} type="shows"/> 
                 </motion.div>
            </motion.div>
@@ -71,13 +84,29 @@ const Home = () => {
 
        <section aria-label="Recommended for you">
           <h2 className=" heading_section white_text fw_300 fs_600">Recommended for you</h2>
-           <div className='recommendedForYou_container'>
+           <div className='grid_card_container'>
              <ListCard data = {recommended} type="recommended"/> 
            </div>
         
        </section>
-    
+       </>
+       :
+      
+       <section className='search_found'>
+         {!isLoading && (
+           <>
+           <h2 className=" heading_section white_text fw_300 fs_600">Found {data.results.length} results for ‘{searchTerm}’</h2>
+           <div className='grid_card_container'>
 
+              <ListCard data = {data.results} type="search"/> 
+            </div>
+            </>
+         )}
+          
+       </section>
+       
+      }
+       
       </main>
     
     </section>

@@ -8,7 +8,7 @@ const ListCard = ({data,type}) => {
 
   return (
     <>
-     {console.log('it renders')}
+   
      {type ==='shows'?(data.map((item)=>{
        return <TrendingCard key ={item.id} show ={item}/>
      })):(data.map((item)=>{

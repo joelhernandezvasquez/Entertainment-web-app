@@ -1,7 +1,7 @@
 import { useState, useEffect,useRef } from 'react'
 
 
-const useFetch = (search,endpoint) => {
+const useFetch = (search,url) => {
   
  const [response,setResponse] = useState({
      data:null,
@@ -22,7 +22,7 @@ const useFetch = (search,endpoint) => {
   useEffect(()=>{
     const getData = async () =>{
        try{
-          const request  = await fetch(endpoint);
+          const request  = await fetch(url);
           const result = await request.json();
 
           if(isMounted){

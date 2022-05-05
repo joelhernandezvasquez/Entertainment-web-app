@@ -1,4 +1,5 @@
 
+@import '../layout/header';
 @import '../components/navigation';
 @import '../components/avatar';
 @import '../components/search';
@@ -9,28 +10,33 @@
 @import '../components/card_entertaiment';
 
 
+
 .home_wrapper{
-    
+  overflow:hidden
 }
+
+
 
 .trending_show_container{
    cursor:grab;
-   overflow:hidden;
+   overflow:hidden; 
   
 }
 
 .inner_show_container{
-  
     display:flex;
     align-items: flex-start;
 }
 
-.recommendedForYou_container{
-    //border:1px solid blue;
-  
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(164px,max-content));
-  
-    gap:15px;
-    margin-bottom:60px;
+.grid_card_container{
+    max-width: 1240px;
+   display:flex;
+   flex-wrap: wrap;
+   gap:15px;
+   padding-bottom:60px;
+
+   @media(min-width: $table_screen)
+   {
+       gap:30px;
+   }
 }

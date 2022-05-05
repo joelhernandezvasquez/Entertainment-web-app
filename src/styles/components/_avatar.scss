@@ -1,6 +1,6 @@
 .avatar{
-    width:24px;
-    height:24px;
+    width:  clamp(1.5rem, 4.1vw, 2.5rem);
+    height: clamp(1.5rem, 4.1vw, 2.5rem);
     border-radius:50%;
     border:1px solid $pure_white;
     position: relative;
@@ -11,6 +11,12 @@
         height:100%;
         border-radius:50%;
         object-fit:cover;
+    }
+
+    @media(min-width: $desktop_screen)
+    {
+      align-self: end;
+      
     }
   
   }

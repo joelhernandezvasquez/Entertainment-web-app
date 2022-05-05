@@ -17,7 +17,8 @@ const [activeLink,setActiveLink] = useState(pathname);
   }
   return (
    
-   <nav className='main_navigation flex flex_row_center_space_between' aria-label='Main Navigation'>
+  //  <nav className='flex flex_row_center_space_between main_navigation ' aria-label='Main Navigation'>
+      <nav className="main_navigation" aria-label='Main Navigation'>
  
     <img src={Logo} alt="Movie Logo" role ="img"/>
 

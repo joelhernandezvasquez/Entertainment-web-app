@@ -3,8 +3,29 @@
 .card_entertaiment{
     width:164px;
     height:154px;
-    margin-bottom: 16px;;
+    margin-bottom: 16px;
     position:relative;
+    cursor: pointer;
+  
+
+    @media(min-width:$table_screen)
+    {
+       
+     
+     width:220px;
+        height:192px;
+        
+        .card_title{
+            font-size:1.125rem;
+        }
+    }
+
+    @media(min-width:1200px)
+    {
+        width:280px;
+        height:226px;
+       
+    }
 
     .bookmark_icon_container{
         position:absolute;
@@ -17,7 +38,8 @@
 
 .card_entertaiment_img_container{
     width:100%;
-    height:110px;
+    height: clamp(6.875rem, 15.7vw, 10.875rem);
+   
 }
 .entertaiment_card_img{
     width:100%;
@@ -26,12 +48,15 @@
 }
 
 .inner_card_information{
-   
+  
+ 
     .card_information{
         position:relative;
         margin-top:8px;
         bottom:0;
         padding:0;
+      
+        
     }
   }
 
