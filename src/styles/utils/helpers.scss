@@ -96,7 +96,7 @@
 
 .container{
 
-    padding:0 clamp(1rem, 3.2vw, 1.5rem);
+    padding:0 clamp(1rem, 3.2vw, 2.25rem);
     //border:1px solid red;
 }
 
@@ -108,9 +108,8 @@
     {
        
         display:grid;
-        grid-template-columns: 32px 1fr 1fr;
-        grid-template-areas: 
-        ". main_header main_area";
-        
+        grid-template-columns: 32px 96px 1fr;
+       
+      
     }
 }

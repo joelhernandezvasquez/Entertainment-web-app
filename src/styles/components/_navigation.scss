@@ -22,14 +22,18 @@
  {
      
      width:96px;
-      height:800px;
+      height:960px;
      grid-column: 2/3;
   
       display:grid;
       grid-template-columns: 1fr;
       grid-template-rows:74px auto auto;
-      //justify-items: center;
-     //padding:0px 0 32px 0;
+      justify-items: center;
+      padding-left:0;
+      padding-right:0;
+      margin-left: 0;
+      margin-right:0;
+    // padding:0px 0 32px 0;
      
  }
  

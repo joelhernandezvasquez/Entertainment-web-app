@@ -85,15 +85,15 @@ select {
   }
 
 .main_header{
-  grid-area:main_header;
+  grid-column: 2/3;
   
 }
   .main_area{
     
     @media(min-width: $desktop_screen)
     {
-        grid-area:main_area;
-        // grid-column:3/4;
+       
+        grid-column:3/4;
         //display:none;
     }
 }
