@@ -37,3 +37,21 @@ export const fetchRecommended = async () =>{
     }
   }
 }
+
+export const fetchMoviesRecommended = async ()=>{
+   try{
+      const request = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`);
+      const response = await request.json();
+
+      return{
+        success:true,
+        data:response.results
+      }
+   }
+   catch(err){
+     return{
+       success:false,
+       data:err
+     }
+   }
+}

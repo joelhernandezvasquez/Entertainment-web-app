@@ -19,9 +19,6 @@ const Home = () => {
   const {data,isLoading} = useFetch(searchTerm,`https:api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${searchTerm}`);
   const offWidth = useRef();
  
-
-
-
   useEffect(()=>{
   
      if(trending.length === 0){
@@ -58,8 +55,7 @@ const Home = () => {
 
   
   return (
-    <section className='home_wrapper grid'>
-  {console.log(`trendingShowWidth:${trendingShowWidth}`)}
+    <section className='home_wrapper grid' aria-label="Home">
      
       <header className="main_header">
          <Nav/>

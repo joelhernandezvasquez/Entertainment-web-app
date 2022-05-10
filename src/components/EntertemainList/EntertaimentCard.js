@@ -9,8 +9,8 @@ import {getYear,getClassifiedShow} from '../helpers/index';
 
 const EntertaimentCard = ({info}) => {
 
-  const year = getYear(info.media_type === 'movie' ? info.release_date: info.first_air_date)  // probably needs to use memo here
- const {media_type} = info;
+  const year = getYear(info.release_date || info.first_air_date) ;
+   const media_type = !info.hasOwnProperty('media_type') ? 'movie' : info.media_type;
  const classifiedShow = getClassifiedShow(media_type,info.adult);
  const title = media_type === 'movie'? info.title : info.name
  const {data,isLoading} = useFetchImage(info.poster_path);
@@ -19,6 +19,7 @@ const EntertaimentCard = ({info}) => {
  
   return (
    <div className='card_entertaiment' onMouseEnter={()=>handleToogle()} onMouseLeave = {()=> handleToogle()}>
+    {/* { console.log(info)} */}
       {!isLoading && ( 
         <>
          <div className="card_entertaiment_img_container" ref = {card_entertaiment_img_container_ref}>

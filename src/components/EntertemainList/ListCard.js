@@ -4,8 +4,6 @@ import EntertaimentCard from "./EntertaimentCard"
 
 
 const ListCard = ({data,type}) => {
-
-
   return (
     <>
    

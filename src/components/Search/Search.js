@@ -1,6 +1,7 @@
 
 import {useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import propTypes from 'prop-types';
 import { getPlaceholder } from '../helpers';
 import IconSearch from '../../assets/icon-search.svg';
 
@@ -51,3 +52,8 @@ const Search = ({searchTerm,handleSearchTerm}) => {
 }
 
 export default Search
+
+Search.prototypes = {
+  searchTerm:propTypes.string.isRequired,
+  handleSearchTerm:propTypes.func.isRequired
+}
