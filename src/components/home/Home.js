@@ -14,20 +14,26 @@ const Home = () => {
   const [searchTerm,setSearchTerm] = useState('');
   const [trending,setTrending] = useState([]);
   const [recommended,setRecommended] = useState([]);
-  const [trendingShowWidth,setTrendingShowWidth] = useState(0);
+  const [trendingShowWidth,setTrendingShowWidth] = useState();
   const trendingShowContainerRef = useRef();
   const {data,isLoading} = useFetch(searchTerm,`https:api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${searchTerm}`);
-  
+  const offWidth = useRef();
+ 
+
+
 
   useEffect(()=>{
-   setTrendingShowWidth(trendingShowContainerRef.current.scrollWidth - trendingShowContainerRef.current.offsetWidth);
+  
+     if(trending.length === 0){
+       offWidth.current = trendingShowContainerRef.current.offsetWidth;
+     }
+  
+   setTrendingShowWidth(trendingShowContainerRef.current.scrollWidth - offWidth.current);
+
   },[trending])
 
 
   useEffect(()=>{
-
-  
-     
     const getTrendingData = async () =>{
     
       Promise.allSettled([
@@ -48,13 +54,12 @@ const Home = () => {
     }
     getTrendingData();
    
-    
   },[])
 
   
   return (
     <section className='home_wrapper grid'>
-  
+  {console.log(`trendingShowWidth:${trendingShowWidth}`)}
      
       <header className="main_header">
          <Nav/>
@@ -68,7 +73,7 @@ const Home = () => {
       
       ? 
       <>
-      {}
+      
       <section className="trending_show_section"  aria-label="Trending Shows">
             <h2 className="heading_section white_text fw_300 fs_600">Trending</h2>
         

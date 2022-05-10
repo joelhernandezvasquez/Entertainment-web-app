@@ -24,6 +24,7 @@ import EntertainmentApp from './EntertainmentApp';
 import AuthState from './auth/AuthState';
 
 
+
 const rootElement = document.getElementById("root");
 ReactDOM.createRoot(rootElement).render(
   <AuthState>

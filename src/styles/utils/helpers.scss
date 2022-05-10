@@ -103,12 +103,13 @@
 // Grid
 
 .grid{
+    
 
     @media(min-width:$desktop_screen)
     {
        
         display:grid;
-        grid-template-columns: 32px 96px 1fr;
+       grid-template-columns: 32px 96px 1fr;
        
       
     }
