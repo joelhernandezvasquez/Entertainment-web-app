@@ -24,7 +24,6 @@ const Movies = () => {
 
   return (
     <section className='grid' aria-label="Movies">
-      {console.log(data)}
       <header className='main_header' aria-label='Movies Page Header'>
           <Nav/>
       </header>
@@ -38,7 +37,7 @@ const Movies = () => {
         <section aria-label=" Movies Recommended">
           <h2 className="heading_section white_text fw_300 fs_600 capitalize">movies</h2>
            <div className='grid_card_container'>
-              <ListCard data = {moviesRecommended} type="recommended"/>   
+              <ListCard data = {moviesRecommended} type="recommended" media = "movie"/>   
            </div>
         
        </section>

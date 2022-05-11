@@ -55,3 +55,23 @@ export const fetchMoviesRecommended = async ()=>{
      }
    }
 }
+
+export const fetchTvSeriesRecommended = async() =>{
+
+  try{
+     const request = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=1`);
+     const response = await request.json();
+
+      console.log(response);
+     return {
+       success:true,
+       data:response.results
+     }
+  }
+  catch(err){
+    return {
+      success:false,
+      data:err
+    }
+  }
+}
