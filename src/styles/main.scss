@@ -1,6 +1,8 @@
 @import './pages/login';
+@import './pages/home';
 @import './utils/variables.scss';
 @import './utils/helpers.scss';
+
 
 /* ---------------*
 /*  Reset */
@@ -13,6 +15,9 @@
 *::after{
   box-sizing: border-box;
 }
+
+
+
 
 /* Reset Margins*/
 
@@ -73,3 +78,21 @@ select {
   a {
     text-decoration: none;
   }
+
+  .heading_section{
+    margin-top: clamp(1.5rem, 4.3vw, 2.1rem);
+    margin-bottom: clamp(1rem, 3.1vw, 1.5rem);
+  }
+
+.main_header{
+  grid-column: 2/3;
+  
+}
+  .main_area{
+  
+    @media(min-width: $desktop_screen)
+    {
+       
+        grid-column:3/4;
+    }
+}

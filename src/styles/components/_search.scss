@@ -1,0 +1,28 @@
+.search{
+    margin-top: clamp(1.5rem, 4.3vw, 4rem);
+}
+.search_form{
+    margin-left: clamp(1rem, 3.1vw, 1.5rem);
+    height:34px;
+    width:100%;
+
+    .input_search{
+        border:none;
+        height:100%;
+        outline: 1px solid transparent;
+        background-color:transparent;
+        width:90%;
+        color:$pure_white;
+       
+
+        &::placeholder{
+            color:rgba($pure_white,0.5);
+            font-size: $fs-400;
+            font-weight: 300;
+        }
+
+    }
+    .active_input_search.input_search{
+        border-bottom: 1px solid $greyish_blue;
+    }
+}

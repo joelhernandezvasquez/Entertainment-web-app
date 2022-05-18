@@ -1,0 +1,41 @@
+
+@import '../components/navigation';
+@import '../components/avatar';
+@import '../components/search';
+@import '../components/trending_card';
+@import '../components/bookmark_icon';
+@import '../components/card_information';
+@import '../components/hover_card';
+@import '../components/card_entertaiment';
+
+
+
+.home_wrapper{
+  overflow:hidden
+}
+
+
+
+.trending_show_container{
+   cursor:grab;
+  overflow:hidden; 
+  
+}
+
+.inner_show_container{
+    display:flex;
+    align-items: flex-start;
+}
+
+.grid_card_container{
+    max-width: 1440px;
+   display:flex;
+   flex-wrap: wrap;
+   gap:15px;
+   padding-bottom:60px;
+
+   @media(min-width: $table_screen)
+   {
+       gap:29px;
+   }
+}

@@ -12,10 +12,13 @@ const EntertainmentApp = () => {
 
       window.gapi.client.init({
         clientId: googleAuthKey,
-         scope:'email'
+         scope:'profile email'
       }).then(()=>{
         const auth =  window.gapi.auth2.getAuthInstance();
+       const profile = auth.currentUser.get().getBasicProfile();
+       
         IsUserSignIn(auth.isSignedIn.get())
+        
       })
      })
   

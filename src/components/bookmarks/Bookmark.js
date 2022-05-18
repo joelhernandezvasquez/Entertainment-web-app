@@ -1,8 +1,13 @@
 import React from 'react'
+import Nav from '../MenuNav/Nav'
+import Search from '../Search/Search'
 
 const Bookmark = () => {
   return (
-    <div>Bookmark</div>
+    <div>
+      <Nav/>
+      <Search/>
+    </div>
   )
 }
 

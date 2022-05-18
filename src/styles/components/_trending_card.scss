@@ -1,0 +1,40 @@
+.trending_card{
+    
+    min-width:240px;
+    height:140px;
+    position:relative;
+    margin-right:16px;
+   
+   
+    .trending_card_img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+       // object-position: center;
+    }
+
+    .inner_trending_information{
+      position: absolute;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      background-color: rgba(0,0,0,0.2);
+      
+      
+    }
+
+   @media(min-width: $table_screen)
+   {
+     min-width: 470px;
+     height:230px;
+     margin-right:40px;
+   }  
+  
+}
+
+
+.bookmark_icon_container{
+    
+     align-self:flex-end;
+}
