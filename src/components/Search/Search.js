@@ -30,7 +30,7 @@ const Search = ({searchTerm,handleSearchTerm}) => {
   return (
     <div className='search flex' aria-label='Search'>
         
-       <img src={IconSearch} alt="Search Icon" role="img"/>
+       <img src={IconSearch} alt="Search Icon" role="img" alt=""/>
     
        <form className='search_form' onSubmit={(e)=> e.preventDefault()}>
         <input type="text"

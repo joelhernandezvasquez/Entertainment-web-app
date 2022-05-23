@@ -41,7 +41,7 @@ const TrendingCard = ({show}) => {
         
       )
       }
-        {isShown && <HoverCard height = {trending_card_ref.current.getBoundingClientRect().height}/>}
+        {isShown && <HoverCard height = {trending_card_ref.current.getBoundingClientRect().height}  id={show.id} media= {media_type}/>}
     </motion.div>
   )
 }

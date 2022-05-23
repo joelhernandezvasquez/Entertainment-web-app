@@ -22,7 +22,7 @@ const EntertaimentCard = ({info,alternateMediaType}) => {
       {!isLoading && ( 
         <>
          <div className="card_entertaiment_img_container" ref = {card_entertaiment_img_container_ref}>
-            <img className="entertaiment_card_img border_radius" src={data} />
+            <img className="entertaiment_card_img border_radius" src={data} alt="" />
             <BookmarkIcon/>
          </div>          
           
@@ -41,7 +41,7 @@ const EntertaimentCard = ({info,alternateMediaType}) => {
         
       )
       }
-     {isShown && <HoverCard height = {card_entertaiment_img_container_ref.current.getBoundingClientRect().height}/>}
+     {isShown && <HoverCard height = {card_entertaiment_img_container_ref.current.getBoundingClientRect().height} id={info.id} media= {media_type}/>}
      
    </div>
   )

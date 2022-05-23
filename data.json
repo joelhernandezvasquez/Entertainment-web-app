@@ -1,0 +1,20 @@
+{
+  "bookmark_shows": [
+    {
+      "id": 0,
+      "media_type": "movie",
+      "img_path": "example/500.com",
+      "year": "2017",
+      "title": "Armagedon",
+      "classified_show": "PG"
+    },
+    {
+      "id": "1",
+      "media_type": "movie",
+      "img_path": "example/400.com",
+      "year": "2022",
+      "title": "example",
+      "classified_show": "E"
+    }
+  ]
+}

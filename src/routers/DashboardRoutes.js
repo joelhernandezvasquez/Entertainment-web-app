@@ -7,12 +7,13 @@ import TvSeries from "../components/tvSeries/TvSeries";
 import Bookmark from "../components/bookmarks/Bookmark";
 
 const DashboardRoutes = () => {
+  
   return (
     <Routes>
       <Route path="home" element={<Home/>}/>
       <Route path="movies" element={<Movies/>}/>
       <Route path="tvSeries" element={<TvSeries/>}/>
-      <Route path="show" element={<Show/>}/>
+      <Route path="show/:id" element={<Show/>}/>
       <Route path="bookmark" element={<Bookmark/>}/>
       <Route path="/" element={<Home />} />
     </Routes>

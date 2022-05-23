@@ -75,3 +75,68 @@ export const fetchTvSeriesRecommended = async() =>{
     }
   }
 }
+
+export const fetchShowDetail = async (url) =>{
+    try{
+       const request = await fetch(url);
+       const response = await request.json();
+
+       return{
+         success:true,
+         data_detail:response
+       }
+    }
+    catch(err){
+      return{
+        success:false,
+        data_detail:err
+      }
+    }
+}
+
+export const getShowImg = async (poster_path) =>{
+  try{
+     const request = await fetch(`https://api.themoviedb.org/3/configuration?api_key=${apiKey}`);
+     const result = await request.json();
+
+     const img = result.images.base_url
+     const posterSize = result.images.poster_sizes[6]; 
+
+     return {
+       success:true,
+       data:`${img}${posterSize}${poster_path}`
+     } 
+  }
+  catch(err){
+   return{
+     success:false,
+     data:err
+   }
+  }
+}
+
+export const postShow = async (show) =>
+{
+   try{
+      const request = await fetch('http://localhost:3001/bookmark_shows',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+        },
+        body:JSON.stringify(show)
+      })
+
+      const response = await request.json()
+       if(response){
+          return {
+           status:201
+          } 
+       }
+   }
+   catch(err){
+     return{
+       status:500
+     }
+   }
+}
+
