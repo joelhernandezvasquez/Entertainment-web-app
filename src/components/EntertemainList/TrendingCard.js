@@ -24,10 +24,10 @@ const TrendingCard = ({show}) => {
       {!isLoading && ( 
         <>
        
-          <img className="trending_card_img border_radius" src={data} />
+          <img className="trending_card_img border_radius" src={data} alt="trending" />
           
           <div className='inner_trending_information flex flex_column'>
-             <BookmarkIcon/>
+             <BookmarkIcon info = {show} imgPath = {data}/>
              <CardInformation 
               year={year}
               media_type = {media_type}

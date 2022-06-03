@@ -1,0 +1,43 @@
+
+
+.toast{
+    background:$pure_white;
+    width: clamp(Min(350px,100%), 35vw, 30rem);
+    height:fit-content;
+    display:grid;
+    grid-template-columns: 50px repeat(2,1fr) 50px;
+    align-items: center;
+    justify-items:center;
+    padding:20px 8px;
+    border-radius: 6px;
+    color:black;
+}
+
+.toast_icon{
+    grid-column: 1/2;
+}
+
+.toast_title{
+    grid-column: 2/span 2;
+    color:#42526E;
+    font-weight: 500;
+}
+
+.toast_message{
+    grid-row: 2/3;
+    grid-column: 2/4;
+    margin-top: 8px;
+  
+  
+}
+:is(.toast_title,.toast_message){
+    font-size: clamp(1rem, 1.5vw, 1.8rem);
+}
+:is(.toast_icon,.toast_close){
+    font-size:clamp(1rem, 2vw, 2rem);
+}
+
+
+.icon_success{
+ color:#36B37E;
+}

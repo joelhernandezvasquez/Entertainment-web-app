@@ -42,7 +42,7 @@ const useFetch = (search,url) => {
         getData();
     }
 
-  },[search])
+  },[search,url])
 
 return response;
 }

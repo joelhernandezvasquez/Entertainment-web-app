@@ -1,16 +1,13 @@
 .card_entertaiment{
-    width:164px;
+   
     height:154px;
     margin-bottom: 16px;
     position:relative;
     cursor: pointer;
-  
 
     @media(min-width:$table_screen)
     {
        
-     
-     width:220px;
         height:192px;
         
         .card_title{
@@ -20,7 +17,6 @@
 
     @media(min-width:1200px)
     {
-        width:280px;
         height:226px;
        
     }

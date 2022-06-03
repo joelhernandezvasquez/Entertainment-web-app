@@ -3,7 +3,6 @@
 import {useReducer} from 'react';
 import authReducer  from './authReducer';
 import  AuthContext  from './authContext';
-import  {googleAuthKey} from '../API/index';
 import {types} from '../types/types';
 
 const AuthState =  (props) =>{
@@ -11,8 +10,6 @@ const AuthState =  (props) =>{
     const initialState = {
         logged:null
     }
-
-    
 
     const [state,dispatch] = useReducer(authReducer,initialState);
 

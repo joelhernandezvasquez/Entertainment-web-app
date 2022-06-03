@@ -39,7 +39,8 @@ export const fetchRecommended = async () =>{
 }
 
 export const fetchMoviesRecommended = async ()=>{
-   try{
+   
+  try{
       const request = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`);
       const response = await request.json();
 
@@ -62,7 +63,7 @@ export const fetchTvSeriesRecommended = async() =>{
      const request = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=1`);
      const response = await request.json();
 
-      console.log(response);
+    
      return {
        success:true,
        data:response.results
@@ -138,5 +139,43 @@ export const postShow = async (show) =>
        status:500
      }
    }
+}
+
+export const getAllShows = async () =>{
+
+  try{
+    const request = await fetch('http://localhost:3001/bookmark_shows')
+    const response = await request.json();
+
+    return{
+      success:true,
+      data:response
+    }
+  }
+  catch(err){
+    return{
+      success:false,
+      data:err
+    }
+  }
+}
+
+export const searchShows = async (searchText) =>{
+  try{
+     const request = await fetch(`http://localhost:3001/bookmark_shows?q=${searchText}`)
+     const response = await request.json();
+     const data = response.filter((data)=> data.title.includes(searchText))
+  
+  return{
+    success:true,
+    data
+  }
+  }
+  catch(err){
+    return{
+      success:false,
+      data:err
+    }
+  }
 }
 

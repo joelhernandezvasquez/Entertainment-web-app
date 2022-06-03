@@ -1,5 +1,6 @@
 import { placeholders } from "../../Constants/constants";
 
+
 // this function connects to the google auth2 api and return the user profile
 // name if the user has been authenticated succesfully
 export const getProfileName = () =>{
@@ -17,7 +18,7 @@ export const getProfileName = () =>{
 export const getProfileEmail = () =>{
     try{
 
-        console.log(window.gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getEmail())
+      
        return window.gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getEmail();
     
     }
@@ -52,4 +53,14 @@ export const getYear = (date) =>{
 
 export const getClassifiedShow = (media_type,type_of_show) =>{
   return media_type === 'movie' && !type_of_show ? 'PG' : 'E';
+}
+
+
+export const isBookmarked= (arrayShows,id) =>{
+   return  arrayShows.some((v)=> v.id === id)
+}
+
+export const filterByMedia = (array,media)=>
+{
+ return array.filter((d)=> d.media_type === media)
 }

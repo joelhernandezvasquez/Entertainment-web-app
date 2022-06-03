@@ -24,7 +24,7 @@ const ProfilePanel = () => {
     <div className='profile_panel flex flex_center border_radius animate__animated animate__fadeIn'>
     
       <div className='profile_img_container'>
-        <img src={getImageUrl()} className="profile_img" alt="profile picture"/>
+        <img src={getImageUrl()} className="profile_img" alt="profile "/>
         
       </div>  
 

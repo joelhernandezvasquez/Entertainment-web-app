@@ -1,3 +1,4 @@
+
 import TrendingCard from "./TrendingCard"
 import EntertaimentCard from "./EntertaimentCard"
 

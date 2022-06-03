@@ -22,7 +22,7 @@ const TvSeries = () => {
    },[])
 
   return (
-    <section className='grid' aria-label='Tv Series'>
+    <section className='grid animate__animated animate__fadeIn' aria-label='Tv Series'>
        <header className='main_header' aria-label='Tv Series Page Header'>
          <Nav/>
       </header>
@@ -33,7 +33,7 @@ const TvSeries = () => {
        {!searchTvSeries
          ?
           <>
-          <section aria-label="Tv Series Recommended">
+          <section className='animate__animated animate__fadeIn' aria-label="Tv Series Recommended">
           <h2 className="heading_section white_text fw_300 fs_600 capitalize">TV series</h2>
             <div className='grid_card_container'>
               <ListCard data = {tvSeriesRecommended} type="recommended" media = "tv"/>   
@@ -42,7 +42,7 @@ const TvSeries = () => {
         </section>
         </>
         :
-        <section className='search_found'>
+        <section className='search_found animate__animated animate__fadeIn'>
         {!isLoading && (
           <>
           <h2 className=" heading_section white_text fw_300 fs_600">Found {data.results.length} results for ‘{searchTvSeries}’</h2>

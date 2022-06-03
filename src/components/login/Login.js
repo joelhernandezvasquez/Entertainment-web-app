@@ -18,7 +18,7 @@ const Login = () => {
   return (
     <section className='login_wrapper flex flex_column_center animate__animated animate__fadeIn'>
        <header>
-         <img src={Logo} alt="Red Movie Logo" role="img"/>
+         <img src={Logo} alt="Red Movie Logo"/>
        </header>
 
        <main>

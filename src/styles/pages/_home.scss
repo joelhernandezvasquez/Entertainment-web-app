@@ -7,35 +7,38 @@
 @import '../components/card_information';
 @import '../components/hover_card';
 @import '../components/card_entertaiment';
+@import '../components/modal';
+@import '../components/confirmation';
+@import '../components/toast';
 
 
 
 .home_wrapper{
-  overflow:hidden
+  overflow:hidden;
 }
-
 
 
 .trending_show_container{
    cursor:grab;
-  overflow:hidden; 
-  
+  overflow: hidden;
 }
 
 .inner_show_container{
     display:flex;
     align-items: flex-start;
+  
 }
 
 .grid_card_container{
-    max-width: 1440px;
-   display:flex;
-   flex-wrap: wrap;
-   gap:15px;
-   padding-bottom:60px;
-
-   @media(min-width: $table_screen)
-   {
-       gap:29px;
-   }
+ 
+  max-width: 1440px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(Min(164px,100%),220px));
+  grid-gap:20px;
+  
+@media(min-width:$desktop_screen)
+{
+  grid-gap:50px;
+}
+   
 }

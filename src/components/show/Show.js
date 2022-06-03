@@ -31,14 +31,12 @@ const Show = () => {
     }
 
        getDetails();
-  },[])
+  },[apiUrl])
 
 
   return (
     <section className='show_container animate__animated animate__zoomIn '>
-     {
-       console.log(showInfo)
-     }
+    
      <div className='show_img_container'>
         <img src={showImg} alt=""/>  
      </div>
@@ -50,12 +48,12 @@ const Show = () => {
           
           <div className='icon_box_container'>
           <div className='icon_box'>
-          <i class="fa fa-star-o" aria-hidden="true"></i> 
+          <i className="fa fa-star-o" aria-hidden="true"></i> 
           <p>{showInfo.vote_average}</p>
           </div>
           
           <div className='icon_box'>
-          <i class="fa fa-calendar" aria-hidden="true"></i>
+          <i className="fa fa-calendar" aria-hidden="true"></i>
           <p>{getYear(showInfo.first_air_date || showInfo.release_date)}</p>
           </div>
           </div>
@@ -63,7 +61,7 @@ const Show = () => {
           <p className='show_title_subheading'>{showInfo.overview}</p>
          
           
-          <a href={showInfo.homepage} target="_blank"  className='btn_play'><i class="fa fa-play" aria-hidden="true"></i> Watch Trailer</a>
+          <a href={showInfo.homepage}   className='btn_play'><i className="fa fa-play" aria-hidden="true"></i> Watch Trailer</a>
           
           
         

@@ -19,7 +19,7 @@ const [activeLink,setActiveLink] = useState(pathname);
   //  <nav className='flex flex_row_center_space_between main_navigation ' aria-label='Main Navigation'>
       <nav className="main_navigation" aria-label='Main Navigation'>
  
-    <img src={Logo} alt="Movie Logo" role ="img"/>
+    <img src={Logo} alt="Movie Logo"/>
 
      <ul className='menu_items flex'>
 

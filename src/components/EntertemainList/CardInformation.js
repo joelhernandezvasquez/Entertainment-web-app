@@ -11,7 +11,7 @@ const CardInformation = ({year,media_type,classifiedShow,title}) => {
          <div className='card_dot'></div>
         
         <div className='media_type_container flex flex_center_align'>
-        <img src={media_type === 'movie'? MovieIcon: TvSeries} alt ="Movie" role="img"/>
+        <img src={media_type === 'movie'? MovieIcon: TvSeries} alt ="Movie"/>
         <p className='capitalize'>{media_type}</p>
         </div>
         

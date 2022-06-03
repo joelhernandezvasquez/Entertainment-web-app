@@ -42,6 +42,7 @@ body {
     font-family: 'Outfit', sans-serif;
     background-color:$dark_black;
     color:white;
+    position:relative;
   }
 
   /* make images easier to work with*/
@@ -93,7 +94,6 @@ select {
   
     @media(min-width: $desktop_screen)
     {
-       
-        grid-column:3/4;
+         grid-column:3/4;
     }
 }

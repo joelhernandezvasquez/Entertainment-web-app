@@ -17,7 +17,8 @@ const Home = () => {
   const trendingShowContainerRef = useRef();
   const {data,isLoading} = useFetch(searchTerm,`https:api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${searchTerm}`);
   const offWidth = useRef();
- 
+
+
   useEffect(()=>{
   
      if(trending.length === 0){
@@ -69,20 +70,20 @@ const Home = () => {
       ? 
       <>
       
-      <section className="trending_show_section"  aria-label="Trending Shows">
+      <section className="trending_show_section animate__animated animate__fadeIn"  aria-label="Trending Shows">
             <h2 className="heading_section white_text fw_300 fs_600">Trending</h2>
         
-           <motion.div ref={trendingShowContainerRef} className='trending_show_container' whileTap={{cursor:'grabbing'}}>
+            <motion.div ref={trendingShowContainerRef} className='trending_show_container' whileTap={{cursor:'grabbing'}}>
                 <motion.div drag="x" dragConstraints={{right:0,left:-trendingShowWidth}} className='inner_show_container'>
                
                     <ListCard data = {trending} type="shows"/> 
                 </motion.div>
-           </motion.div>
-            
+           </motion.div> 
+
        </section>
 
 
-       <section aria-label="Recommended for you">
+       <section className='animate__animated animate__fadeIn' aria-label="Recommended for you">
           <h2 className=" heading_section white_text fw_300 fs_600">Recommended for you</h2>
            <div className='grid_card_container'>
              <ListCard data = {recommended} type="recommended"/> 
@@ -92,7 +93,7 @@ const Home = () => {
        </>
        :
       
-       <section className='search_found'>
+       <section className='search_found animate__animated animate__fadeIn'>
          {!isLoading && (
            <>
            <h2 className=" heading_section white_text fw_300 fs_600">Found {data.results.length} results for ‘{searchTerm}’</h2>

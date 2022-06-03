@@ -13,8 +13,6 @@ const useToogle = (initialValue = false) => {
     }
 
     return [toogle,handleToogle,toggling];
-
-
 }
 
 export default useToogle

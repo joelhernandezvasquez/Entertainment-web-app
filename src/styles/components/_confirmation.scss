@@ -1,0 +1,45 @@
+
+.confirmation{
+    width: clamp(320px, 50vw, 31.25rem);
+    background-color:$semi_dark_blue;
+    height: fit-content;
+    padding: clamp(1.2rem, 2vw, 1.8rem);
+    border-radius: 6px;
+}
+
+.confirmation_btn_containers{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top:16px;
+}
+.confirmation_btn_containers > *{
+    margin-right:16px;
+    padding:5px 16px;
+    font-size: 1rem;
+    border:none;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.confirmation_btn_containers button:nth-child(1) {
+  background:$primary_red;
+  color:$pure_white;
+  transition:all 400ms ease-in-out;
+
+  &:hover{
+      background-color: $pure_white;
+      color:$semi_dark_blue;
+  }
+}
+
+.confirmation_btn_containers button:nth-child(2) {
+  
+    transition:all 400ms ease-in-out;
+    &:hover{
+        background-color: rgba($pure_white,0.8);
+       
+    }
+  }
+  

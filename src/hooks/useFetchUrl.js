@@ -43,7 +43,7 @@ const useFetchUrl = (url) =>{
      }
 
     
-  },[])
+  },[url])
 
   return response;
 

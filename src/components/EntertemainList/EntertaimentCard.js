@@ -9,7 +9,6 @@ import {getYear,getClassifiedShow} from '../helpers/index';
 const EntertaimentCard = ({info,alternateMediaType}) => {
 
   const year = getYear(info.release_date || info.first_air_date) ;
- // const media_type = !info.hasOwnProperty('media_type') ? 'movie' : info.media_type;
  const media_type = info.media_type || alternateMediaType;
  const classifiedShow = getClassifiedShow(media_type,info.adult);
  const title = info.title || info.name;
@@ -23,7 +22,7 @@ const EntertaimentCard = ({info,alternateMediaType}) => {
         <>
          <div className="card_entertaiment_img_container" ref = {card_entertaiment_img_container_ref}>
             <img className="entertaiment_card_img border_radius" src={data} alt="" />
-            <BookmarkIcon/>
+            <BookmarkIcon info = {info} imgPath = {data} media = {alternateMediaType} />
          </div>          
           
           <div className='inner_card_information'>

@@ -23,7 +23,7 @@ const Movies = () => {
    },[])
 
   return (
-    <section className='grid' aria-label="Movies">
+    <section className='grid animate__animated animate__fadeIn' aria-label="Movies">
       <header className='main_header' aria-label='Movies Page Header'>
           <Nav/>
       </header>
@@ -34,7 +34,7 @@ const Movies = () => {
       {!movieSearch
       ?
       <>
-        <section aria-label=" Movies Recommended">
+        <section className='animate__animated animate__fadeIn' aria-label=" Movies Recommended">
           <h2 className="heading_section white_text fw_300 fs_600 capitalize">movies</h2>
            <div className='grid_card_container'>
               <ListCard data = {moviesRecommended} type="recommended" media = "movie"/>   
@@ -43,7 +43,7 @@ const Movies = () => {
        </section>
       </>
       :
-      <section className='search_found'>
+      <section className='search_found animate__animated animate__fadeIn'>
          {!isLoading && (
            <>
            <h2 className=" heading_section white_text fw_300 fs_600">Found {data.results.length} results for ‘{movieSearch}’</h2>
