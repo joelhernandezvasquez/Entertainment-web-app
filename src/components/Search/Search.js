@@ -6,7 +6,6 @@ import IconSearch from '../../assets/icon-search.svg';
 
 const Search = ({searchTerm,handleSearchTerm}) => {
 
-   
     const inputRef = useRef(null);
     const location = useLocation();
 
@@ -16,22 +15,15 @@ const Search = ({searchTerm,handleSearchTerm}) => {
 
     const handleKeyUp = () =>{
       let timer;
-
       clearTimeout(timer);
-
-     timer = setTimeout(()=>{
-        
+      timer = setTimeout(()=>{
         inputRef.current.classList.remove('active_input_search');
       },3000)
       
     }
-
-
   return (
     <div className='search flex' aria-label='Search'>
-        
-       <img src={IconSearch} alt=""/>
-    
+        <img src={IconSearch} alt=""/>
        <form className='search_form' onSubmit={(e)=> e.preventDefault()}>
         <input type="text"
             name="search"

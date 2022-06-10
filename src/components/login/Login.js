@@ -4,11 +4,9 @@ import AuthContext from '../../auth/authContext';
 import Logo from '../../assets/logo.svg';
 import '../../styles/main.scss';
 
-
 const Login = () => {
    const {loginIn} = useContext(AuthContext);
  
-
    const handlerLogin = () =>{
     window.gapi.auth2.getAuthInstance().signIn().then(()=>{
        loginIn();
@@ -20,7 +18,6 @@ const Login = () => {
        <header>
          <img src={Logo} alt="Red Movie Logo"/>
        </header>
-
        <main>
          <div className='login_container' role="form" aria-labelledby='sign-in-form'>
            <h1 className='white_text fw_300 fs_800'>Login</h1>

@@ -23,7 +23,6 @@ const TrendingCard = ({show}) => {
     
       {!isLoading && ( 
         <>
-       
           <img className="trending_card_img border_radius" src={data} alt="trending" />
           
           <div className='inner_trending_information flex flex_column'>

@@ -6,16 +6,12 @@ const ProfilePanel = () => {
   
   const {logOut} = useContext(authContext);
   
-
   const handleLogout = () =>{
     window.gapi.auth2.getAuthInstance().signOut().then(()=>{
-     
       try{
-
-         logOut();
+        logOut();
       }
-      catch(err)
-      {
+      catch(err) {
         console.log(err);
       }
     })
@@ -29,10 +25,6 @@ const ProfilePanel = () => {
       </div>  
 
     <div className='profile_info_col'>
-
-     {/* need to check these functions for memoization */}
-
-     
        <h4 className='fs_300'>{getProfileName()}</h4>
        <p className='profile_email fs_200'>{getProfileEmail()}</p>
        <button className='btn_logOut' onClick={handleLogout}>Log out</button>

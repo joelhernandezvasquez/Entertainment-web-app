@@ -16,7 +16,6 @@ const [isConfirmed,setConfirmation] = useState(false);
 const [postStatus,setPostStatus] = useState(0);
 const [Bookmarked,setBookmarked] = useState(false);
 
-
 useEffect(()=>{
   if(isConfirmed){  
       const handlePost = async () =>{
@@ -28,19 +27,16 @@ useEffect(()=>{
 },[isConfirmed])
 
 
-
 useEffect(()=>{
-    const getData = async () =>{
-      const {success,data} = await getAllShows()
-       if(success){
-         setBookmarked(isBookmarked(data,info.id))
-       }
-    }
-    if(info)getData();
+  getAllShows()
+  .then(response =>{
+    const {success,data} = response;
+     success?setBookmarked(isBookmarked(data,info.id)):console.log(data);
+  })
+  
 },[postStatus,info])
 
 const onHandleToogle = (e) =>{
-
  scrollTop.current = e.pageY;
   handleToogle()
 }
@@ -50,15 +46,10 @@ const onHandleConfirmation =() =>{
   setConfirmation(true);
 }
 
-
-
   return (
     <div className="bookmark_icon_container flex flex_center" onClick={(e)=>onHandleToogle(e) }>
-  
        <img src={!Bookmarked ? BookmarkIconImage : BookmarkIconImageFilled} alt = "Bookmark" />
        {toogle && <Modal content={<Confirmation close = {handleToogle} top = {scrollTop} handleConfirmation = {onHandleConfirmation}/>} />}
-    
-     
       {postStatus === 201 && <Modal content = {<Toast close = {setPostStatus} appereance={'Success'} message={'Your Show has been saved.'} top = {scrollTop}/>}/>}
    
     </div>

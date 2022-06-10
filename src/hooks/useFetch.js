@@ -2,7 +2,7 @@ import { useState, useEffect,useRef } from 'react'
 
 
 const useFetch = (search,url) => {
-  
+
  const [response,setResponse] = useState({
      data:null,
      isLoading:true,

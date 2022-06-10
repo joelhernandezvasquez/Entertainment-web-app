@@ -19,6 +19,8 @@ export const fetchTrending =  async () =>{
   }
 }
 
+
+
 export const fetchRecommended = async () =>{
   try{
    const request = await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}`)

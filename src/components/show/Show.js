@@ -4,11 +4,8 @@ import { apiKey,fetchShowDetail,getShowImg } from '../../API';
 import { useParams,useLocation } from 'react-router-dom';
 import { getYear } from '../helpers';
 
-
 const Show = () => {
-
   const {id} = useParams();
- 
   const {state} = useLocation();
   const apiUrl = state === 'movie' ? `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`:
   `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=en-US`;
@@ -19,7 +16,6 @@ const Show = () => {
   useEffect(()=>{
     const getDetails = async () =>{
       const {data_detail,success} = await fetchShowDetail(apiUrl);
-  
       const{data} = await getShowImg(data_detail.poster_path);
        
          if(success){
@@ -29,8 +25,7 @@ const Show = () => {
          }
           throw new Error('The data did not fetch correctly');
     }
-
-       getDetails();
+     getDetails();
   },[apiUrl])
 
 
@@ -59,11 +54,7 @@ const Show = () => {
           </div>
          
           <p className='show_title_subheading'>{showInfo.overview}</p>
-         
-          
           <a href={showInfo.homepage}   className='btn_play'><i className="fa fa-play" aria-hidden="true"></i> Watch Trailer</a>
-          
-          
         
           </>
        )}

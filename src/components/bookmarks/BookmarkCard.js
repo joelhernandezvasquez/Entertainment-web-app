@@ -20,15 +20,12 @@ const BookmarkCard = ({show}) => {
          </div>   
 
               <div className='inner_card_information'>
-            
              <CardInformation 
               year={year}
               media_type = {media_type}
               classifiedShow = {classifiedShow}
               title= {title}
-
-             />
-            
+             />  
           </div>
              {isShown && <HoverCard height = {card_entertaiment_img_container_ref.current.getBoundingClientRect().height} id={id} media= {media_type}/>}  
           

@@ -9,10 +9,8 @@ const Avatar = () => {
   return (
     
     <div className='avatar' aria-label='avatar'>
-        
     <img src={getImageUrl()} alt="profile" onClick={handleToogle}/>
     
-   
      { toogle &&  <ProfilePanel/>}
 
   </div>

@@ -20,7 +20,6 @@ const CardInformation = ({year,media_type,classifiedShow,title}) => {
      </div>
      <h5 className='fs_300 fw_500 card_title'>{title}</h5>
      
-     
     </div>
   )
 }
