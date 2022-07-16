@@ -1,4 +1,3 @@
-import React from 'react'
 
 const Toast = ({close,appereance,message,top}) => {
 

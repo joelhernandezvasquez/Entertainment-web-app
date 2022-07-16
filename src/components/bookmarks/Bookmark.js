@@ -21,8 +21,11 @@ const Bookmark = () => {
       const { success, data } = response;
 
       if (success) {
-        setBookmarkMovies(filterByMedia(data, "movie"));
+
+      
+         setBookmarkMovies(filterByMedia(data, "movie"));
         setBookmarkTvSeries(filterByMedia(data, "tv"));
+      
       } else {
         console.log(data);
       }
